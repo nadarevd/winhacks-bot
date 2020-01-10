@@ -6,7 +6,7 @@ class websiteCommand extends commando.Command {
     constructor(client) { //when command is loaded
         super(client, {
             name: 'website',
-            group: 'random',
+            group: 'general',
             memberName: 'website',
             description: 'Shows you information about the hackathon'
         });

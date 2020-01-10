@@ -6,7 +6,7 @@ class mapCommand extends commando.Command {
     constructor(client) { //when command is loaded
         super(client, {
             name: 'map',
-            group: 'random',
+            group: 'general',
             memberName: 'map',
             description: 'Shows a map of the area'
         });
