@@ -8,8 +8,7 @@ class scheduleCommand extends commando.Command {
             name: 'schedule',
             group: 'general',
             memberName: 'schedule',
-            description: 'Shows you an organized schedule of what is happening during the event'
-
+            description: 'Shows you an organized schedule of what is happening during the event.'
         });
     }
 
@@ -17,22 +16,19 @@ class scheduleCommand extends commando.Command {
         let pages = ['page 1', 'page 2', 'page 3'];
         let dates = ['Friday - March 27th, 2020', 'Saturday - March 28th, 2020', 'Sunday - March 29th, 2020'];
         var time_slots_friday = [
-            "5:00pm - 12:00am  :  Registration Opens\n\n6:00pm - 7:30pm    :   Opening ceremonies\n\n7:30pm - 8:30pm    :   Dinner\n\n7:30pm - 8:30pm   :  Talk - Pick your Project\n\n8:30pm - 9:00pm   :  Team Formation\n\n7:30pm - 11:00pm  :  Hardware showcase\n\n11:00pm - Onward  :  Hardware checkout\n\n11:30pm - 12:30am :  Workshop - GitHub\n\n1:00am            :  Snack",
+            "5:00 PM - Minecraft Server Opens\n6:00 PM - Opening Ceremonies\n7:30 PM - Team Formation Starts\n8:30 PM - Capture the Flag\n9:30 PM - Pick your Project\n9:30 PM - Discussion about Challenges\n9:30 PM - Competition AMA\n10:30 PM - Women's & LGBTQ Meetup\n11:00 PM - Check-in closes\n11:30 PM - GitHub\n",
 
-            "8:00am - 9:00am : Breakfast\n\n9:00am - 10:00am : Google Talk\n\n10:00am - 11:00am : Workshop\n\n11:00am - 12:00pm : Talk\n\n12:00pm - 1:00pm : Women's Meetup\n\n1:00pm - 2:00pm : Lunch - Vendor Booths\n\n2:00pm - 3:00pm : LGBTQ Meetup\n\n3:00pm - 4:00pm : Talk\n\n4:00pm - 5:00pm : Workshop\n\n5:00pm - 6:00pm : Talk\n\n6:00pm - 7:00pm : Activity\n\n7:00pm - 8:00pm : Dinner\n\n9:00pm - 10:00pm : Workshop\n\n10:00pm - 11:00pm : Activity\n\n11:00pm - 12:00pm : Workshop\n\n12:00pm - 1:00am : Workshop\n\n2:00am : Snack",
+            "8:30 AM - Opening Day 2\n9:00 AM - WEtech Alliance Ideation Workshop\n10:05 AM - Introduction to Artificial Intelligence\n11:10 AM - Leveraging City of Windsor Traffic Data Workshop\n12:15 PM - BlackBerry Recruiter Q & A\n1:30 PM - Fiix Software, Test Driven Development\n2:35 PM - Technical Communications Workshop\n3:40 PM - Google Firebase / Firestore\n4:45 PM - Google Cloud Platform / Data Analytics\n5:50 PM - Introduction to Ruby on Rails Workshop\n6:00 PM - League of Legends Tournament Starts\n7:00 PM - Google TensorFlow Webinar\n7:00 PM - Google Cloud Hero Challenge\n8:05 PM - Quantum Computing Workshop\n9:10 PM - Ethical Hacking and Cybersecurity\n10:15 PM - Introduction to Web Development\n11:20 PM - Landing an Internship\n",
 
-            "8:00am : Breakfast\n\n9:00am - 10:00am : Submission deadline\n\n10:00am - 1:00pm : Project showcase\n\n1:00pm - 2:00pm : Lunch\n\n2:00pm - 2:30pm : Closing Ceremonies - Awards"
+            "1:00 AM - EZY Mode Tournament Stream Replay\n8:45 AM - Opening Day 3\n9:00 AM - Soft Submission Deadline\n9:45 AM - Hard Submission Deadline\n10:00 AM - Event re-cap and discussion\n11:00 AM - Stream Highlights\n12:00 PM - Minecraft & League of Legends Winners Announced\n1:00 PM - Behind the Scenes Slideshow\n2:00 PM - Team Presentations\n3:00 PM  - Awards\n3:30 PM - Closing Ceremonies\n"
         ];
         let page = 1;
-
-
-
         const embed = new Discord.RichEmbed()
             .setThumbnail("https://i.imgur.com/u8xvvdd.jpg")
             .setColor(0x00AF86)
             .setTitle("Schedule: " + dates[page - 1])
             .setDescription(time_slots_friday[page - 1])
-            .setFooter(`Page ` + page + 'of ' + pages.length)
+            .setFooter(`Page ` + page + ' of ' + pages.length + ` - Eastern Standard Time Schedule`)
         message.channel.send(embed).then(msg => {
             msg.react('⏪').then(r => {
                 msg.react('⏩')
@@ -56,7 +52,7 @@ class scheduleCommand extends commando.Command {
                     page++;
                     embed.setTitle("Schedule: " + dates[page - 1])
                     embed.setDescription(time_slots_friday[page - 1])
-                    embed.setFooter(`Page ` + page + 'of ' + pages.length)
+                    embed.setFooter(`Page ` + page + ' of ' + pages.length + ` - Eastern Standard Time Schedule`)
                     msg.edit(embed)
                 })
             })

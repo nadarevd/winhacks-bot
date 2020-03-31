@@ -25,11 +25,9 @@ class WeatherCommand extends commando.Command {
                 city += message.content.split(" ")[i];
             }
         }
-        // message.reply(city);
 
         weather.find({ search: city, degreeType: 'C' }, function(err, result) {
             if (err) {
-                // console.log(err);
                 message.channel.send(err);
             } else {
                 try {
@@ -39,7 +37,6 @@ class WeatherCommand extends commando.Command {
                     message.channel.send("Sorry I didn't quite get that.");
                     return;
                 }
-
                 console.log(current);
                 const embed = new Discord.RichEmbed()
                     .setDescription(`**${current.skytext}**`)
